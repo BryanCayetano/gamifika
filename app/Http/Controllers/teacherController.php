@@ -63,5 +63,14 @@ class teacherController extends Controller
                 "msg" => "Usuario no registrado",
             ], 404);
         }
+        
+    }
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            "status" => 1,
+            "msg" => "Cierre de Sesión",
+        ]);   
     }
 }

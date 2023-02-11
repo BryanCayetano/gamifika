@@ -65,4 +65,12 @@ class studentController extends Controller
             ], 404);
         }
     }
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            "status" => 1,
+            "msg" => "Cierre de Sesión",
+        ]);   
+    }
 }
