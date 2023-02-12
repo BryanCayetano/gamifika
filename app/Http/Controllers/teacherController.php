@@ -65,7 +65,7 @@ class teacherController extends Controller
         }
         
     }
-    public function logout(Request $request)
+    public function logout_teacher(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
         return response()->json([
